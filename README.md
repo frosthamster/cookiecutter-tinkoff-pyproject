@@ -10,23 +10,3 @@ Cookicutter python project template
 $ cookiecutter gl/tinkoff-python-spring-2019/public/cookiecutter-pyproject
 project_name []: my_project
 ```
-
-### Create virtualenv and install requirements
-
-    make init
-
-### Run autoformat
-
-    make pretty
-
-### Run linters
-
-    make lint
-
-### Run tests
-
-    make test
-
-### Add precommit hook
-
-    make precommit_install
