@@ -17,5 +17,6 @@ pretty:
 	pipenv run black --py36 --line-length=100 -S $(CODE) tests
 
 precommit_install:
-	echo '#!/bin/sh\nmake lint test\n' > .git/hooks/pre-commit
+	mkdir -p .git/hooks
+	echo -e '#!/bin/sh\nmake lint test' > .git/hooks/pre-commit
 	chmod +x .git/hooks/pre-commit
