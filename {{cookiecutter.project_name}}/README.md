@@ -1,30 +1,32 @@
 # {{cookiecutter.project_name}}
 
-Description...
+Description
+
+## Dependencies
+- python 3.7
+- pipenv
 
 ## Examples
 
 ```bash
-$ ls
-dir1 dir2 dir3
 ```
 
 ### Create virtualenv and install requirements
 
-    make init
+    $ make init
 
 ### Run autoformat
 
-    make pretty
+    $ make pretty
 
 ### Run linters
 
-    make lint
+    $ make lint
 
 ### Run tests
 
-    make test
+    $ make test
 
 ### Add precommit hook
 
-    make precommit_install
+    $ make precommit_install

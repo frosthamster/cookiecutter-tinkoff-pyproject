@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+flake8-builtins = "*"
+flake8-comprehensions = "*"
+flake8-eradicate = "*"
+flake8-isort = "*"
+flake8-logging-format = "*"
+flake8-pie = "*"
+flake8-pytest = "*"
+pep8-naming = "*"
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+
+[packages]
+
+[requires]
+python_version = "3.7"

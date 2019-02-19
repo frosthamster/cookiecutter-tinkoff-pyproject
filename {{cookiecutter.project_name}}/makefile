@@ -1,21 +1,20 @@
-BIN = .venv/bin/
+#!/usr/bin/env bash
 CODE = {{cookiecutter.project_slug}}
 
 init:
-	python3 -m venv .venv
-	$(BIN)pip install -r requirements.txt
+	pipenv install --dev
 
 test:
-	$(BIN)pytest -vv --cov=$(CODE) $(args)
+	pipenv run pytest -vv --cov=$(CODE) $(args)
 
 lint:
-	$(BIN)flake8 --jobs 4 --statistics $(CODE) tests
-	$(BIN)pylint --jobs 4 --rcfile=setup.cfg $(CODE)
-	$(BIN)black --py36 --line-length=79 --check $(CODE) tests
+	pipenv run flake8 --jobs 4 --statistics $(CODE) tests
+	pipenv run pylint --jobs 4 --rcfile=setup.cfg $(CODE)
+	pipenv run black --py36 --line-length=100 -S --check $(CODE) tests
 
 pretty:
-	$(BIN)isort --apply --recursive $(CODE) tests
-	$(BIN)black --py36 --line-length=79 $(CODE) tests
+	pipenv run isort --apply --recursive $(CODE) tests
+	pipenv run black --py36 --line-length=100 -S $(CODE) tests
 
 precommit_install:
 	echo '#!/bin/sh\nmake lint test\n' > .git/hooks/pre-commit

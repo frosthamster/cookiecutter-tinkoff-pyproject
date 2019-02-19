@@ -1,12 +1,11 @@
 # cookiecutter-pypackage-poetry
 
-Cookicutter python project template
+Cookicutter tinkoff python project template
 
 ## Usage
 
 ### Create project
 
 ```bash
-$ cookiecutter gl/tinkoff-python-spring-2019/public/cookiecutter-pyproject
-project_name []: my_project
+$ cookiecutter gh:frosthamster/cookiecutter-tinkoff-pyproject
 ```
