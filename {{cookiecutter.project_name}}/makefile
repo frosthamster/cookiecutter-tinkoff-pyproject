@@ -5,7 +5,7 @@ init:
 	pipenv install --dev
 
 test:
-	pipenv run pytest -vv --cov=$(CODE) $(args)
+	pipenv run python -m pytest -vv --cov=$(CODE) $(args)
 
 lint:
 	pipenv run flake8 --jobs 4 --statistics $(CODE) tests
