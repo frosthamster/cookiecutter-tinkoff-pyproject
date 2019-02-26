@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-CODE = sorter
+CODE = {{cookiecutter.project_slug}}
 
 init:
 	echo 'PYTHONPATH=$${PYTHONPATH}:$${PWD}' > .env
