@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-CODE = {{cookiecutter.project_slug}}
+CODE = sorter
 
 init:
+	echo 'PYTHONPATH=$${PYTHONPATH}:$${PWD}' > .env
 	pipenv install --dev
 
 test:
-	pipenv run python -m pytest -vv --cov=$(CODE) $(args)
+	pipenv run pytest -vv --cov=$(CODE) $(args)
 
 lint:
 	pipenv run flake8 --jobs 4 --statistics $(CODE) tests
@@ -17,6 +18,5 @@ pretty:
 	pipenv run black --py36 --line-length=100 -S $(CODE) tests
 
 precommit_install:
-	mkdir -p .git/hooks
 	echo -e '#!/bin/sh\nmake lint test' > .git/hooks/pre-commit
 	chmod +x .git/hooks/pre-commit
