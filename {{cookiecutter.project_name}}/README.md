@@ -12,7 +12,8 @@ Description
 ```
 
 ### Create virtualenv and install requirements
-
+    
+    $ pip install --user --upgrade pipenv
     $ make init
 
 ### Run autoformat
